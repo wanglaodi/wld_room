@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>字符串去空格</title>
+    <script src="http://bmpic.matewish.cn/meibo-test/js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+        <section>
+               <input type="text"  id="input" value="{   羽扇纶巾    }">
+               <input type="button"  id="btn" value="过滤">
+        </section>
+
+        <script type="text/javascript">
+                (function(){
+                    var input = document.getElementById('input');
+                    var btn = document.getElementById('btn');
+                    btn.onclick = function(){
+                        input.value = input.value.replace(/(\s|\u00A0)+|(\s|\u00A0)+/g,'');
+                    }
+                }());
+        </script>
+</body>
+</html>

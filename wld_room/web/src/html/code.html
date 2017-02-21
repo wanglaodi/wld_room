@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+    <title>王老迪代码区</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href='/vendor/animate/animate.css'>
+    <link rel="stylesheet" type="text/css" href="../css/code/code.css">
+</head>
+<body>
+    <header id="header">
+            <nav class="navbar navbar-default" style="margin-bottom:0px; ">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#" style="padding:0">
+                        <img alt="Brand" src="../images/pic.jpg" style="width:50px;height:50px;border-radius:50%;" >
+                  </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                        <li><a href="#">猪才用剪刀手</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                        <form class="navbar-form navbar-left" role="search">
+                            <div id="dengchu">
+                                <span>欢迎您&nbsp;|&nbsp;</span>
+                                <span id="user-name"></span>
+                                <a href="index.php?r=user/logot" class="navbar-link" id="dengchu-btn">登出</a>
+                            </div>
+                            <div id="denglu">
+                                <a href="#" data-toggle="modal" data-target="#signupModal" class="navbar-link">注册</a>
+                                <span>&nbsp;|&nbsp;</span>
+                                <a href="#" data-toggle="modal" data-target="#signinModal" class="navbar-link" id="denglu-btn">登录</a>
+                            </div>
+                        </form>  
+                        <div id="signupModal" class="modal fade">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <form method="POST" action="/user/signup">
+                                <div class="modal-header">注册</div>
+                                <div class="modal-body">
+                                  <div class="form-group">
+                                    <label for="signupName">用户名</label>
+                                    <input id="signupName" name="user[name]" type="text" class="form-control"/>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="signupPassword">密码</label>
+                                    <input id="signupPassword" name="user[password]" type="text" class="form-control"/>
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" data-dismiss="modal" class="btn btn-default">关闭</button>
+                                  <button type="submit" class="btn btn-success">提交</button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="signinModal" class="modal fade">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <form method="POST" action="/user/signin">
+                                <div class="modal-header">登录</div>
+                                <div class="modal-body">
+                                  <div class="form-group">
+                                    <label for="signinName">用户名</label>
+                                    <input id="signinName" name="user[name]" type="text" class="form-control"/>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="signinPassword">密码</label>
+                                    <input id="signinPassword" name="user[password]" type="text" class="form-control"/>
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" data-dismiss="modal" class="btn btn-default">关闭</button>
+                                  <button type="submit" class="btn btn-success">提交</button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+    </header>
+
+    <div  class="warp">
+            <div class="container">
+                  <div class="banner-top">
+                        <div class="row">
+                                <div class="col-md-5 banner-left">
+                                        <h1>成为一个更好的、更聪明和明智的开发人员。</h1>
+                                        <p>创建一个免费Hashnode帐户的一部分多样化的和尊重的软件开发人员社区。 很容易,只需要不到30秒注册。</p>
+                                        <!-- Split button -->
+                                        <div class="banner-btn">
+                                            <div class="btn-group">
+                                                 <a href="../html/index.html">
+                                                      <button type="button" class="btn btn-success">
+                                                                <span class="glyphicon glyphicon-home"></span>&nbsp;王老迪
+                                                      </button>
+                                                 </a>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="col-md-7">
+                                        <div class="row">
+                                                <div class="col-md-4 banner-right">
+                                                    <div class="banner-img">
+                                                        <img src="../images/qq.png">
+                                                    </div>
+                                                    <p>寻求建议和意见你的编程问题。</p>
+                                                </div>
+                                                <div class="col-md-4 banner-right">
+                                                    <div class="banner-img">
+                                                        <img src="../images/qq1.png">
+                                                    </div>
+                                                     <p>寻求建议和意见你的编程问题。</p>
+                                                </div>
+                                                <div class="col-md-4 banner-right">
+                                                       <div class="banner-img">
+                                                            <img src="../images/qq2.png">
+                                                        </div>
+                                                        <p>寻求建议和意见你的编程问题。</p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                  </div>
+                  <div class="banner-center">
+                        <div class="row">
+                                <div class="col-md-8">
+                                        <div class="info-left">
+                                                <div class="info-zw info-me-zw">
+                                                         <!-- 这里插入前端代码 -->
+                                                </div>
+                                                <div class="comment">
+                                                    <div class="panel panel-success">
+                                                          <div class="panel-heading" style="background: #155217; color:#fff">
+                                                                <span class="heading-left"><span class="glyphicon glyphicon-pencil"></span>&nbsp;写&nbsp;评论 </span>
+                                                                <span class="heading-right"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;预览</span>
+                                                          </div>
+                                                          <div class="panel-body wanglaodi">
+                                                                <textarea></textarea>
+                                                                <div class="submit">
+                                                                        <a>评论</a>
+                                                                </div>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                               <h3 style="font-size:24px;">评论区</h3>
+                                                 <div class="comment-zw">
+                                                      <div class="comment-no">暂时没有评论————————</div>
+                                                 </div>
+                                        </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                        <div class="info-right">
+                                                <div>
+                                                        
+                                                </div>
+                                                <div class="info-right-from">
+                                                        <ul class="list-group">
+                                                          <li class="list-group-item">
+                                                            <span class="badge">14</span>
+                                                            Cras justo odio
+                                                          </li>
+                                                          <li class="list-group-item">
+                                                            <span class="badge">14</span>
+                                                            Cras justo odio
+                                                          </li>
+                                                          <li class="list-group-item">
+                                                            <span class="badge">14</span>
+                                                            Cras justo odio
+                                                          </li>
+                                                          <li class="list-group-item">
+                                                            <span class="badge">14</span>
+                                                            Cras justo odio
+                                                          </li>
+                                                          <li class="list-group-item">
+                                                            <span class="badge">14</span>
+                                                            Cras justo odio
+                                                          </li>
+                                                        </ul>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                  </div>
+            </div>
+    </div>
+
+    <!-- 文章前端代码区 -->
+    <script type="text/template" id="codeTxt">
+            <div class="ct-top">
+                    <div class="user-img">
+                              <img src="<%= pic %>">
+                    </div>
+                    <div class="name">
+                            <p><%= name%>
+                                <span class="year"><%= year %>年</span>
+                                <span class="month"><%= month %>月</span>
+                                <span class="day"><%= day %>日</span>
+                            </p>
+                    </div>
+            </div>
+            <div class="ct-center">
+                   <div class="title">
+                            <h1><%= title %></h1>
+                   </div>
+                   <div class="txt">
+                            <%= txt %>
+                   </div>
+            </div>
+            <div class="ct-footer">
+                    <hr>
+                    <p>希望这是有帮助的</p>
+                    <a class="arrow arrow-top" href="@href-top"><span  class="glyphicon glyphicon-arrow-down"></span></a>
+                    <a class="arrow arrow-bottom" href="@href-bottom"><span  class="glyphicon glyphicon-arrow-up"></span></a>
+            </div>
+    </script>
+
+    <script type="text/template" id="codeComment">
+        <div class="info-zw">
+
+                <div class="ct-top">
+
+                    <div class="comment_one">
+                        <div class="user-img">
+                                  <img src="<%= pic %>">
+                        </div>
+                        <div class="name">
+                                <p>
+                                    <span class="user_name"><%= user_name %></span>
+                                    <span class="year"><%= time %></span>
+                                    <span class="record_id"><%= record_id %></span>
+                                </p>
+                        </div>
+                        <div class="ct-center">
+                               <div class="txt">
+                                   <%= txt %>
+                               </div>
+                               <div class="reply">
+                                          <a ><span class="glyphicon glyphicon-edit"></span></a>
+                               </div>
+                         </div>
+                    </div>
+
+                    <% for(x in user_after) {%>
+                    <div class="comment_after">
+                        <hr style="border-top:1px solid #014204" />
+                        <div class="user-img">
+                                  <img src="<%= user_after[x].pic %>" height="348" width="510">
+                        </div>
+                        <div class="name" id="commentname">
+                                <p><span class="user_name"><%= user_after[x].user_name %></span>&nbsp;回复 &nbsp;<%= user_after[x].to_user_name %>
+                                </p>
+                                <span class="year"><%= user_after[x].time %></span>
+                        </div>
+                        <div class="ct-center">
+                               <div class="txt">
+                                   <%= user_after[x].txt %>
+                               </div>
+                               <div class="reply">
+                                    <a><span class="glyphicon glyphicon-edit"></span></a>
+                               </div>
+                         </div>
+                    </div>
+                    <% } %>
+
+                    <div class="comment_reply" style="display: none">
+                        <hr style="border-top:1px solid #014204"/>
+                        <div class="panel-body commentst">
+                            <p class="to_name"></p>
+                            <textarea class="aaasdas"></textarea>
+                            <div class="submit">
+                                <a>回复</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="/vendor/sweetalert/sweetalert.css">
+    <script type="text/javascript" src="/vendor/sweetalert/sweetalert.min.js"></script>
+    <script src="http://bmpic.matewish.cn/meibo-test/js/jquery-1.9.1.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
+    <script src="http://bmpic.matewish.cn/meibo-test/js/backbone_underscore.js"></script>
+    
+    <!-- 文章backbone框架代码区 -->
+    <script type="text/javascript" src="../js/code/txt_backbone.js"></script>
+
+    <!-- 评论backbone框架代码区 -->
+    <script type="text/javascript" src="../js/code/comment_backbone.js"></script>
+
+    <!-- 逻辑代码区 -->
+    <script type="text/javascript" src="../js/code/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>文字滚动效果</title>
+    <link rel="stylesheet" href="">
+    <script src="http://bmpic.matewish.cn/meibo-test/js/jquery-1.9.1.min.js"></script>
+    <style>
+                .roll{ height:165px; overflow:hidden; }
+                .list{ margin:0;}
+                .list li{}
+    </style>
+</head>
+<body>
+        <div class="demo1">
+            <h3>文本框中的文字自动滚动</h3>
+            <div id="roll" data-rwidth="100" data-rheight="100" class="roll">
+                <ul id="ul" class="list" style="">
+                    <li>滟滟随波千万里，何处春江无月明！</li>
+                    <li>江流宛转绕芳甸，月照花林皆似霰。</li>
+                    <li>空里流霜不觉飞，汀上白沙看不见。</li>
+                    <li>江天一色无纤尘，皎皎空中孤月轮。</li>
+                    <li>江畔何人初见月？江月何年初照人？</li>
+                    <li>人生代代无穷已，江月年年望相似。</li>
+                    <li>不知江月待何人，但见长江送流水。</li>
+                    <li>白云一片去悠悠，青枫浦上不胜愁。</li>
+                    <li>谁家今夜扁舟子？何处相思明月楼？</li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+            function autoScroll(obj, ul_bz){
+                $(obj).find(ul_bz).animate({
+                    marginTop : "-25px"
+                },500,function(){
+                    $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);
+                });
+            }
+            setInterval('autoScroll("#roll", "#ul")',1000)
+        </script>
+</body>
+</html>

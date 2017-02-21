@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>联系</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://bmpic.matewish.cn/meibo-test/js/jquery-1.9.1.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/introduce/introduce.css" type="text/css">
+</head>
+
+<body>
+            <!-- 头部-->
+            <header id="header">
+                    <nav class="navbar navbar-default" style="margin-bottom:0px; ">
+                      <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                          <a class="navbar-brand" href="#" style="padding:0">
+                                <img alt="Brand" src="../images/pic.jpg" style="width:50px;height:50px;border-radius:50%;" >
+                          </a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                          <ul class="nav navbar-nav">
+                                <li><a href="#">猪才用剪刀手</a></li>
+                          </ul>
+                          <ul class="nav navbar-nav navbar-right">
+                                <form class="navbar-form navbar-left" role="search">
+                                    <div id="dengchu">
+                                      <span>欢迎您&nbsp;|&nbsp;</span>
+                                      <span id="user-name"></span>
+                                      <a href="/logot" class="navbar-link" id="dengchu-btn">登出</a>
+                                  </div>
+                                  <div id="denglu">
+                                      <a href="#" data-toggle="modal" data-target="#signupModal" class="navbar-link">注册</a>
+                                      <span>&nbsp;|&nbsp;</span>
+                                      <a href="#" data-toggle="modal" data-target="#signinModal" class="navbar-link" id="denglu-btn">登录</a>
+                                  </div>
+                                </form>  
+                                 <div id="signupModal" class="modal fade">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <form method="POST" action="/user/signup">
+                                      <div class="modal-header">注册</div>
+                                      <div class="modal-body">
+                                        <div class="form-group">
+                                          <label for="signupName">用户名</label>
+                                          <input id="signupName" name="user[name]" type="text" class="form-control"/>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="signupPassword">密码</label>
+                                          <input id="signupPassword" name="user[password]" type="text" class="form-control"/>
+                                        </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" data-dismiss="modal" class="btn btn-default">关闭</button>
+                                        <button type="submit" class="btn btn-success">提交</button>
+                                      </div>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="signinModal" class="modal fade">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <form method="POST" action="/user/signin">
+                                      <div class="modal-header">登录</div>
+                                      <div class="modal-body">
+                                        <div class="form-group">
+                                          <label for="signinName">用户名</label>
+                                          <input id="signinName" name="user[name]" type="text" class="form-control"/>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="signinPassword">密码</label>
+                                          <input id="signinPassword" name="user[password]" type="text" class="form-control"/>
+                                        </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" data-dismiss="modal" class="btn btn-default">关闭</button>
+                                        <button type="submit" class="btn btn-success">提交</button>
+                                      </div>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                          </ul>
+                        </div><!-- /.navbar-collapse -->
+                      </div><!-- /.container-fluid -->
+                    </nav>
+            </header>
+
+            <!-- 介绍部分 -->
+           <div class="container">
+                <div class="row">
+                        <div class="col-md-3">
+                              <div class="logo">
+                                  <img src="../images/pic.jpg" />
+                              </div>
+                        </div>
+                        <div class="col-md-9">
+                              <div class="ct-center">
+                               <div class="title">
+                                        <h1>成为一个更好的、更聪明和明智的开发人员。</h1>
+                               </div>
+                               <div class="txt">
+                                        <p>前端开发也许是最快速变化在软件开发领域。 你会找到一个新的库或一个新的讨论每隔一天会改变你看到前端开发的方式。</p>
+
+                                        <p>但你如何跟上这个速度?</p>
+
+                                        <p>这里有点通讯列表我放在一起,每一个感兴趣的前端开发可以遵循和被告知一切热在前端开发。</p>
+
+                                        <p><a>前端开发周</a>——热门前端开发人员消息,上周和灵感的工具。</p>
+
+                                        <p>前端通讯最好的前端——每周时事通讯相关的新闻,文章,项目在JavaScript中,反应,角,灰烬,聚合物,流星,RxJS,榆树等等。</p>
+
+                                        <p><a>前端开发周</a>——每日简报前端开发者和设计师每天5最好的链接</p>
+
+                                        <p><a>前端开发周</a>——每周最热门的讨论、故事和hashnode链接。 精心挑选,每星期。</p>
+
+                                        <p><a>前端开发周</a>- 5最佳设计链接的列表</p>
+
+                                        <p><a>前端开发周</a>——每周电子邮件摘要css的文章、教程、实验和工具</p>
+
+                                        <p>网络工具每周一周一次,快速提示和充满web工具的链接</p>
+
+                                        <p><a>前端开发周</a>——每周电子邮件没有垃圾,没有杂乱的。 纯粹的最好的新闻和文章的链接在本周触及互联网。</p>
+
+                                        <p><a>前端开发周</a>——每周聚集反应设计的文章、工具提示、教程和鼓舞人心的链接。</p>
+
+                                        <p><a>前端开发周</a>——每周HTML5和网络平台技术的CSS 3,画布,websocket,WebGL,本地客户,和更多。</p>
+
+                                        <p><a>前端开发周</a>——接收开发人员小费,gif的形式,每周你的收件箱。</p>
+
+                                        <p><a>前端开发周</a>——文章的集合和思想从css技巧和克里斯Coyier。</p>
+
+                                        <p><a>前端开发周</a>——每周简讯粉碎的内容。</p>
+
+                                        <p><a>前端开发周</a>——每周时事通讯公司,技术,编程等等。</p>
+
+                                        <p><a>前端开发周</a>——每日收集奇妙的UI的例子。</p>
+
+                                        <p><a>前端开发周</a>——HTML电子邮件发展一系列的提示和技巧。</p>
+
+                                        <p><a>前端开发周</a>——收集的真正伟大的邮件设计,每周时事通讯。</p>
+                               </div>
+                          </div>
+                      </div>
+                </div>
+           </div>
+
+            <!--  逻辑部分代码  -->
+           <script type="text/javascript" src="../js/introduce/index.js"></script>
+</body>
+</html>

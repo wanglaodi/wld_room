@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../images/io.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+    <title>日常代码合集</title>
+    <link rel="stylesheet" type="text/css" href="../css/home/index.css">
+    <link rel="stylesheet" type="text/css" href='/vendor/animate/animate.css'>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 临时修改 -->
+    <style type="text/css">
+        html{
+            overflow: hidden;
+        }
+    </style>
+
+    <script  type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = ["Android", "iPhone",
+                        "SymbianOS", "Windows Phone",
+                        "iPad", "iPod"];
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if(!IsPC()){
+            window.location.href='#slide-main';
+        }else{
+            window.location.href='#slide-main';
+        }
+
+        //点击登入个注册加上一个透明的滚动条
+        $('#denglu-btn').click(function(){
+             $("document.body").css('border-right',widthScrollbar + 'px solid transparent');
+        })
+    </script>
+</head>
+<body >
+
+    <!-- 头部 -->
+    <header id="header">
+            <nav class="navbar navbar-default" style="margin-bottom:0px; ">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#" style="padding:0">
+                        <img alt="Brand" src="../images/pic.jpg" style="width:50px;height:50px;border-radius:50%;" >
+                  </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                        <li><a href="#">猪才用剪刀手</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                        <form class="navbar-form navbar-left" role="search">
+                            <div id="dengchu">
+                                <span>欢迎您&nbsp;|&nbsp;</span>
+                                <span id="user-name"></span>
+                                <a href="/index.php?r=user/logot" class="navbar-link" id="dengchu-btn">登出</a>
+                            </div>
+                            <div id="denglu">
+                                <a href="#" data-toggle="modal" data-target="#signupModal" class="navbar-link">注册</a>
+                                <span>&nbsp;|&nbsp;</span>
+                                <a href="#" data-toggle="modal" data-target="#signinModal" class="navbar-link" id="denglu-btn">登录</a>
+                            </div>
+                        </form>  
+                        <div id="signupModal" class="modal fade">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                           
+                                <div class="modal-header">注册</div>
+                                <div class="modal-body">
+                                  <div class="form-group">
+                                    <label for="signupName">用户名</label>
+                                    <input id="signupName" name="user[name]" type="text" class="form-control"/>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="signupPassword">密码</label>
+                                    <input id="signupPassword" name="user[password]" type="password" class="form-control"/>
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" data-dismiss="modal" class="btn btn-default">关闭</button>
+                                  <button type="submit" class="btn btn-success" id="user-signup">提交</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="signinModal" class="modal fade">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">登录</div>
+                                <div class="modal-body">
+                                  <div class="form-group">
+                                    <label for="signinName">用户名</label>
+                                    <input id="signinName" name="user[name]" type="text" class="form-control"/>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="signinPassword">密码</label>
+                                    <input id="signinPassword" name="user[password]" type="password" class="form-control"/>
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" data-dismiss="modal" class="btn btn-default">关闭</button>
+                                  <button type="submit" class="btn btn-success" id="user-signin">提交</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+    </header>
+    
+    <!-- 下面部分 -->
+    <div class="jumbotron" style="background-color:#eceff1;padding-top:80px;">
+      <div class="container">
+            <div class="row">
+                <div class="col-md-12 jm" id="jumu">
+                        <div class="row">
+                                <div class="col-md-6" id="jumu-left">
+                                </div>
+                                 <div class="col-md-6">
+                                            
+                                </div>
+                        </div>
+                </div>
+            </div>
+      </div>
+    </div>
+    <!-- <button id="btn-a">aaaaaaaaaaaaa</button>
+    <input type="text"  id="valint" value="1"> -->
+    <section class="cn-container">
+            <div class="row">
+              <div class="col-md-2">
+                  <div class="cn-nav">
+                            <ul>
+                                    <li>
+                                         <a href="introduce.html">
+                                                <img src="../images/aaa.png">
+                                                <span>联系</span>
+                                         </a>
+                                    </li>
+                                    <li><a href="code.html"><img src="../images/code.png"><span>代码</span></a></li>
+                                    <li><a class="musics " id="musics"><img src="../images/music.png"><span>音乐</span></a>
+                                            <audio id="audio" loop="loop" style="width:160px;">
+                                                  <source src="../music/a.mp3" type="audio/mpeg">
+                                            </audio>
+                                    </li>
+                            </ul>
+                    </div>
+              </div>
+              <div class="col-md-7">
+                        <div class="info">
+                                <div class="info-jm">
+                                        <div class="glyphicon glyphicon-tree-deciduous"></div>
+                                </div>
+                                <div class="info-ct">
+                                        <ul>
+                                        </ul>
+                                </div>
+                        </div>
+              </div>
+              <div class="col-md-3 sld">
+                  <div class="cn-slide" id="slide-main">
+                            <h2>常用代码</h2>
+                            <nav>
+                                        <a href="#slide-1">表单日常</a>
+                                        <a href="#slide-2">内容展示</a>
+                                        <a href="#slide-3">动画表现</a>
+                            </nav>
+                    </div>
+
+                    <div class="cn-slide cn-slide-sub" id="slide-1">
+                            <h2>表单日常</h2>
+                            <a href="#slide-main" class="cn-back">Back</a>
+                            <nav></nav>
+                    </div>
+                    <div class="cn-slide cn-slide-sub" id="slide-2">
+                            <h2>内容展示</h2>
+                            <a href="#slide-main" class="cn-back">Back</a>
+                            <nav></nav>
+                    </div>
+                    <div class="cn-slide cn-slide-sub" id="slide-3">
+                            <h2>动画表现</h2>
+                            <a href="#slide-main" class="cn-back">Back</a>
+                            <nav></nav>
+                    </div>
+              </div>
+            </div>
+    </section>
+
+
+    <link rel="stylesheet" type="text/css" href="/vendor/sweetalert/sweetalert.css">
+    <script src="/vendor/jq/jq.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/vendor/jq/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/vendor/sweetalert/sweetalert.min.js"></script>
+    <script type="text/javascript" src="/vendor/jq/jquery.validate.js"></script>
+
+    <script type="text/javascript" src="../js/home/index.js"></script>
+
+    <!-- 中间发表信息前端代码 -->
+    <script type="text/template" id="writing">
+            <div class="ct-top">
+                    <div class="user-img">
+                            <img src="<%= pic %>">
+                    </div>
+                    <div class="name">
+                            <p><%= name%>
+                                    <span class="year"><%= year %>年</span>
+                                    <span class="month"><%= month %>月</span>
+                                    <span class="day"><%= day %>日</span>
+                            </p>
+                    </div>
+            </div>
+            <div class="ct-center">
+                   <div class="title">
+                   <h1><a href="code.html?id=<%= id %>"><%= title %></a></h1>
+                   </div>
+                   <div class="txt">
+                        <p>
+                                <i class="txt-i" style="font-style:normal"><%= txt %></i>
+                                <a  href="code.html?id=<%= id %>"><span>阅读更多</span></a>
+                        </p>
+                   </div>
+            </div>
+            <div class="ct-footer">
+                    <div class="tag">
+                        <p>标签:</p><span><%= tag %></span>
+                    </div>
+                    <div class="comment">
+                            <a><img src="../images/liaotian.png"></a><span><%= num %></span>
+                            <a class="arrow"   href="code.html?id=<%= id %>"><span  class="glyphicon glyphicon-arrow-right"></span></a>
+                    </div>
+            </div>
+    </script>
+
+    <!-- 右侧常用代码-前端代码 -->
+    <script type="text/template"  id="practice">
+            <div class="cn-slide" id="@subset">
+                <h2><%= functions %></h2>
+                <a href="#@slide" class="cn-back">Back</a>
+                <div class="cn-content">
+                    <h3>学习</h3>
+                    <p><%= experience %></p>
+                </div>
+                <span class="cn-note">继续点击显示图像</span>
+                <iframe src="<%= address %>">
+                </iframe>
+            </div>
+    </script>
+
+    <script src="http://bmpic.matewish.cn/meibo-test/js/backbone_underscore.js"></script>
+
+    <!-- 右侧常用代码 -->
+    <script type="text/javascript" src="../js/home/r_backbone.js"></script>
+
+    <!-- 中间发表信息 -->
+    <script type="text/javascript" src="../js/home/m_backbone.js"></script>
+
+            
+</body>
+</html> 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>文本过滤</title>
+    <link rel="stylesheet" href="">
+    <script src="http://bmpic.matewish.cn/meibo-test/js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+        <p>备注(不能输入日本)</p>
+        <textarea id="msg" style="width:400px;height:200px" onkeyup="deal()"></textarea>
+
+        <script type="text/javascript">
+                function deal(){
+                    var key ="a";
+                    var v=$("#msg").val();
+                    v = v.replace("日本","");
+                    $("#msg").val(v);
+                   }
+        </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>列表页</title>
+<!-- 使用bootstarps布局-->
+<link rel="stylesheet" type="text/css" href="/vendor/sweetalert/sweetalert.css">
+<script type="text/javascript" src="/vendor/sweetalert/sweetalert.min.js"></script>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+<style type="text/css">
+      .warp{
+          padding: 20px
+      }
+      .ad~*{
+          display: none;
+      }
+</style>
+
+</head>
+
+<body>
+      <div class="row warp">
+           <div class="col-md-2"> 
+               <div class="navs">
+                     <ul class="nav nav-pills nav-stacked">
+                          <li role="presentation" class="navs-1 active"><a href="#">文章页</a></li>
+                          <li role="presentation" class="navs-2"><a href="#">常用代码页</a></li>
+                          <li role="presentation" class="navs-3"><a href="#">用户列表页</a></li>
+                     </ul>
+               </div>
+           </div>
+           <div class="col-md-10">
+                <!-- 文章页 -->
+               <div class="index-txt">
+                    <table class="table table-hover table-bordered">
+                          <thead>
+                               <tr>
+                                  <th>人物图片</th>
+                                  <th>人物名称</th>
+                                  <th>发布时间</th>
+                                  <th>文章标题</th>
+                                  <th>文章正文</th>
+                                  <th>文章标签</th>
+                                  <th>文章查看人数</th>
+                                  <th>查看</th>
+                                  <th>更新</th>
+                                  <th>删除</th>
+                               </tr>
+                               <tbody>
+                                      <!-- 文章页前端模板放在这里 -->
+                               </tbody>
+                          </thead>
+                    </table>
+               </div>
+               <!-- 日常代码页 -->
+               <div class="index-code">
+                    <table class="table table-hover table-bordered">
+                          <thead>
+                               <tr>
+                                  <th>代码标题</th>
+                                  <th>功能名称</th>
+                                  <th>心得正文</th>
+                                  <th>代码地址</th>
+                                  <th>查看</th>
+                                  <th>更新</th>
+                                  <th>删除</th>
+                               </tr>
+                               <tbody>
+                                      <!-- 日常代码页前端模板放在这里 -->
+                               </tbody>
+                          </thead>
+                    </table>
+               </div>
+               <!-- 用户列表页 -->
+               <div class="index-user">
+                    <table class="table table-hover table-bordered">
+                          <thead>
+                               <tr>
+                                  <th>名字</th>
+                                  <th>更新</th>
+                                  <th>删除</th>
+                               </tr>
+                               <tbody>
+                                      <!-- 用户列表页前端模板放在这里 -->
+                               </tbody>
+                          </thead>
+                    </table>
+               </div>
+           </div>
+      </div>
+     
+      <!-- 文章页前端模板 -->
+      <script type="text/template" id="essay">
+              <td><%= pic %></td>
+              <td><%= name %></td>
+              <td><%= year %>年<%= month %>月<%= day %>日</td>
+              <td><%= title %></td>
+              <td><%= txt %></td>
+              <td><%= tag %></td>
+              <td><%= num %></td>
+              <td><a target="_blank" href="../code.html?id=<%= id %>">查看</a></td>
+              <td><a target="_blank" href="/src/html/Backstage/admin.html?id=<%= id %>">修改</a></td>
+              <td>
+                    <button type="button" data-id="<%= id %>" class="btn btn-danger del">删除</button>
+              </td>
+      </script>
+
+      <!-- 代码页前端模板 -->
+      <script type="text/template" id="learn">
+              <td><%= title %></td>
+              <td><%= functions %></td>
+              <td><%= experience %></td>
+              <td><%= address %><td>
+              <td><a target="_blank" href="./admin.html?id=<%= id %>">修改</a></td>
+              <td>
+                    <button type="button" data-id="<%= id %>" class="btn btn-danger del">删除</button>
+              </td>
+      </script>
+
+      <!--  用户列表页前端模板 -->
+      <script type="text/template" id="user">
+              <td><%= name %></td>
+              <td><a target="_blank" href="./admin.html?id=<%= id %>">修改</a></td>
+              <td>
+                    <button type="button" data-id="<%= id %>" class="btn btn-danger del">删除</button>
+              </td>
+      </script>
+
+      <!-- 使用backbone框架来进行模板渲染-->
+      <script src="http://bmpic.matewish.cn/meibo-test/js/jquery-1.9.1.min.js"></script>
+      <script src="http://bmpic.matewish.cn/meibo-test/js/backbone_underscore.js"></script>
+      
+      <!-- 文章页backbone框架使用-->
+      <script type="text/javascript">
+              window.onload= function(){
+                        var M1 = Backbone.Model.extend({});
+                        var C1 = Backbone.Collection.extend({
+                            model:M1,
+                            url:"/index.php?r=essays/index"
+                        });
+                        var Ep = new C1();
+                        var V1 = Backbone.View.extend({
+                            tagName:  "tr",
+                            template:_.template($("#essay").html()),
+                            render:function() {
+                               this.$el.html(this.template(this.model.toJSON()));
+                               return this;
+                            }
+                        });
+
+                        var Vi1 = Backbone.View.extend({
+                            el:$("body"),
+                            initialize:function() {
+                                this.listenTo(Ep, "add", this.addOne);
+                                Ep.fetch({
+                                    method:"get",
+                                });
+                            },
+                            addOne: function(todo) {
+                                var view = new V1({model: todo});
+                                this.$(".index-txt tbody").append(view.render().el);
+                                },
+                        })
+                        var Writing = new Vi1();
+                      }
+      </script>
+
+      <!-- 常用代码页backbone框架使用-->
+      <script type="text/javascript">
+                        var M2 = Backbone.Model.extend({});
+                        var C2 = Backbone.Collection.extend({
+                            model:M2,
+                            url:"/index.php?r=learn/run"
+                        });
+                        var Ep = new C2();
+                        var V2 = Backbone.View.extend({
+                            tagName:  "tr",
+                            template:_.template($("#learn").html()),
+                            render:function() {
+                               this.$el.html(this.template(this.model.toJSON()));
+                               return this;
+                            }
+                        });
+
+                        var Vi2 = Backbone.View.extend({
+                            el:$("body"),
+                            initialize:function() {
+                                this.listenTo(Ep, "add", this.addOne);
+                                Ep.fetch({
+                                    method:"get",
+                                });
+                            },
+                            addOne: function(todo) {
+                                var view = new V2({model: todo});
+                                this.$(".index-code tbody").append(view.render().el);
+                                },
+                        })
+                        var Learn = new Vi2();
+      </script>
+
+      <!-- 用户列表页backbone框架使用-->
+      <script type="text/javascript">
+                        var M3 = Backbone.Model.extend({});
+                        var C3 = Backbone.Collection.extend({
+                            model:M3,
+                            url:"/index.php?r=user/userlist"
+                        });
+                        var Ep = new C3();
+                        var V3 = Backbone.View.extend({
+                            tagName:  "tr",
+                            template:_.template($("#user").html()),
+                            render:function() {
+                               this.$el.html(this.template(this.model.toJSON()));
+                               return this;
+                            }
+                        });
+
+                        var Vi3 = Backbone.View.extend({
+                            el:$("body"),
+                            initialize:function() {
+                                this.listenTo(Ep, "add", this.addOne);
+                                Ep.fetch({
+                                    method:"get",
+                                });
+                            },
+                            addOne: function(todo) {
+                                var view = new V3({model: todo});
+                                this.$(".index-user tbody").append(view.render().el);
+                                },
+                        })
+                        var User = new Vi3();
+      </script>
+
+      <!-- 页面逻辑JS代码 -->
+      <script type="text/javascript" src="/src/js/Backstage/list/index.js"></script>
+
+      <div class="clean-ad"></div>
+</body>
+</html>
